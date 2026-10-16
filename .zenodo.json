@@ -1,0 +1,32 @@
+{
+  "title": "A pragmatic reassessment of HTTP aware features for web attack detection on CIC-IDS2017 and CSIC 2010",
+  "upload_type": "software",
+  "license": "MIT",
+  "creators": [
+    {
+      "name": "Tantaroudas, Nikolaos D.",
+      "affiliation": "Institute of Communication and Computer Systems (ICCS), National Technical University of Athens"
+    },
+    {
+      "name": "Karachalios, Ilias",
+      "affiliation": "University of Thessaly"
+    },
+    {
+      "name": "McCracken, Andrew J.",
+      "affiliation": "DASKALOS APPS SAS"
+    }
+  ],
+  "keywords": [
+    "intrusion detection",
+    "CIC-IDS2017",
+    "CSIC 2010",
+    "web attack detection",
+    "shortcut learning"
+  ],
+  "grants": [
+    {
+      "id": "10.13039/501100000780::101119681"
+    }
+  ],
+  "description": "Code and aggregated results for the Open Research Europe article \"A pragmatic reassessment of HTTP aware features for web attack detection on CIC-IDS2017 and CSIC 2010\"."
+}

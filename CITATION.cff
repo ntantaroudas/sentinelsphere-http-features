@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "A pragmatic reassessment of HTTP aware features for web attack detection on CIC-IDS2017 and CSIC 2010"
+type: software
+license: MIT
+repository-code: "https://github.com/ntantaroudas/sentinelsphere-http-features"
+authors:
+  - family-names: "Tantaroudas"
+    given-names: "Nikolaos D."
+    affiliation: "Institute of Communication and Computer Systems (ICCS), National Technical University of Athens"
+  - family-names: "Karachalios"
+    given-names: "Ilias"
+    affiliation: "University of Thessaly"
+  - family-names: "McCracken"
+    given-names: "Andrew J."
+    affiliation: "DASKALOS APPS SAS"
+keywords:
+  - "intrusion detection"
+  - "CIC-IDS2017"
+  - "CSIC 2010"
+  - "web attack detection"
+  - "shortcut learning"

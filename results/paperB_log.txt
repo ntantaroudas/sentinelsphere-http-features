@@ -1,0 +1,47 @@
+[10:24:31] exp_cic start
+[10:24:34] original: 170366 rows, 2180 attacks, 6066 duplicate rows
+[10:28:15] RQ1 mlp_s21_plus_http_zero     F1 0.1235  FPR 0.00008  FP 4.0  FN 610.6  (220s)
+[10:31:27] RQ1 mlp_s21                    F1 0.1122  FPR 0.00007  FP 3.6  FN 614.8  (192s)
+[10:37:19] RQ1 mlp_s21_weighted           F1 0.3679  FPR 0.04477  FP 2258.8  FN 22.2  (352s)
+[10:40:11] RQ1 mlp_all                    F1 0.8902  FPR 0.00271  FP 136.6  FN 19.8  (172s)
+[10:41:22] RQ1 rf_s21                     F1 0.9197  FPR 0.00055  FP 28.0  FN 73.4  (71s)
+[10:43:59] RQ1 rf_all                     F1 0.9884  FPR 0.00002  FP 1.2  FN 13.8  (158s)
+[10:52:23] RQ1 hgb_all                    F1 0.9960  FPR 0.00004  FP 2.0  FN 3.2  (504s)
+[10:52:43] RQ1 lr_all                     F1 0.8006  FPR 0.00418  FP 211.0  FN 76.6  (20s)
+[10:55:54] RQ1 rf_all_minus_shortcuts     F1 0.9482  FPR 0.00008  FP 4.0  FN 60.8  (190s)
+[10:59:52] RQ1 mlp_s21_dedup              F1 0.1227  FPR 0.00005  FP 2.2  FN 600.8  (238s)
+[11:02:38] RQ1 rf_all_dedup               F1 0.9868  FPR 0.00002  FP 1.0  FN 15.8  (166s)
+[11:06:32] OOF mlp_s21: BENIGN 166753/168186, Web Attack ï¿½ Brute Force 725/1507, Web Attack ï¿½ SQL Injection 0/21, Web Attack ï¿½ XSS 313/652 (234s)
+[11:09:55] OOF rf_all: BENIGN 168181/168186, Web Attack ï¿½ Brute Force 1493/1507, Web Attack ï¿½ SQL Injection 14/21, Web Attack ï¿½ XSS 626/652 (203s)
+[11:10:00] RQ3 top single features: Init_Win_bytes_backward 0.936, Flow Bytes/s 0.927, Init_Win_bytes_forward 0.897, Max Packet Length 0.884, Average Packet Size 0.883, Packet Length Mean 0.881
+[11:10:04] corrected: {'rows': 290227, 'label_counts': {'BENIGN': 288171, 'Web Attack - Brute Force - Attempted': 1292, 'Web Attack - XSS - Attempted': 655, 'Web Attack - Brute Force': 73, 'Web Attack - XSS': 18, 'Web Attack - SQL Injection': 13, 'Web Attack - SQL Injection - Attempted': 5}, 'web_flows': 2056, 'attempted': 1952, 'real_attacks': 104, 'common_features': 64}
+[11:15:26] RQ2 rf_attempted_as_attack    pos 2056  F1 0.9925  P 1.000  R 0.985  (322s)
+[11:17:12] RQ2 mlp_attempted_as_attack    pos 2056  F1 0.9855  P 0.994  R 0.977  (107s)
+[11:19:49] RQ2 rf_attempted_as_benign    pos 104  F1 0.9401  P 1.000  R 0.890  (156s)
+[11:20:35] RQ2 mlp_attempted_as_benign    pos 104  F1 0.9090  P 0.972  R 0.858  (47s)
+[11:22:49] RQ2 rf_attempted_removed      pos 104  F1 0.9269  P 1.000  R 0.865  (134s)
+[11:23:34] RQ2 mlp_attempted_removed      pos 104  F1 0.8726  P 0.972  R 0.794  (45s)
+[11:23:47] cross release: BENIGN 0/288171, Web Attack - Brute Force 73/73, Web Attack - Brute Force - Attempted 0/1292, Web Attack - SQL Injection 0/13, Web Attack - SQL Injection - Attempted 0/5, Web Attack - XSS 18/18, Web Attack - XSS - Attempted 1/655
+[11:23:48] exp_csic start
+[11:23:51] CSIC after dedup {'requests_after_dedup': 34604, 'anomalous': 15964, 'conflicting_duplicates_removed': 0, 'post_share_anomalous': 0.4410548734652969, 'post_share_normal': 0.49946351931330474, 'distinct_user_agents': 1}
+[11:23:56] constant features {'s10_url_raw': ['response_pattern', 'scan_pattern', 'xss_pattern', 'automated_pattern', 'suspicious_timing'], 's10_url_decoded': ['response_pattern', 'scan_pattern', 'automated_pattern', 'suspicious_timing'], 's10_urlbody_decoded': ['response_pattern', 'scan_pattern', 'automated_pattern', 'suspicious_timing'], 'ext24_urlbody': ['c_backtick']}
+[11:24:05] RQ4 rf_s10_url_raw            F1 0.5830  P 0.768  R 0.474  FPR 0.1267  AUC 0.7547 (9s)
+[11:24:19] RQ4 mlp_s10_url_raw            F1 0.4576  P 0.874  R 0.310  FPR 0.0384  AUC 0.7145 (14s)
+[11:24:28] RQ4 rf_s10_url_decoded        F1 0.5864  P 0.775  R 0.476  FPR 0.1226  AUC 0.7582 (9s)
+[11:24:40] RQ4 mlp_s10_url_decoded        F1 0.4538  P 0.861  R 0.308  FPR 0.0432  AUC 0.7082 (12s)
+[11:24:51] RQ4 rf_s10_urlbody_decoded    F1 0.9076  P 0.934  R 0.882  FPR 0.0531  AUC 0.9549 (12s)
+[11:25:03] RQ4 mlp_s10_urlbody_decoded    F1 0.6839  P 0.865  R 0.566  FPR 0.0761  AUC 0.8194 (12s)
+[11:25:18] RQ4 rf_ext24_urlbody          F1 0.9475  P 0.972  R 0.925  FPR 0.0232  AUC 0.9851 (15s)
+[11:25:35] RQ4 mlp_ext24_urlbody          F1 0.8240  P 0.940  R 0.733  FPR 0.0401  AUC 0.9324 (16s)
+[11:26:17] RQ4 lr_char_ngram_urlbody F1 0.9672  FPR 0.0072  AUC 0.9908 (42s)
+[11:26:24] RQ5 drop request_complexity   dF1 -0.0150  dAUC -0.0279
+[11:26:28] RQ5 drop response_pattern     dF1 -0.0004  dAUC -0.0000
+[11:26:31] RQ5 drop path_entropy         dF1 -0.1489  dAUC -0.0749
+[11:26:34] RQ5 drop encoding_indicator   dF1 -0.0059  dAUC -0.0041
+[11:26:39] RQ5 drop scan_pattern         dF1 -0.0007  dAUC +0.0000
+[11:26:43] RQ5 drop brute_force_pattern  dF1 -0.0000  dAUC -0.0001
+[11:26:46] RQ5 drop injection_pattern    dF1 -0.0020  dAUC -0.0009
+[11:26:50] RQ5 drop xss_pattern          dF1 -0.0006  dAUC -0.0002
+[11:26:54] RQ5 drop automated_pattern    dF1 -0.0012  dAUC +0.0004
+[11:26:57] RQ5 drop suspicious_timing    dF1 -0.0012  dAUC +0.0004
+[11:26:58] Paper B done
